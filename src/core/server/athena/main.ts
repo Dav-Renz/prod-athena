@@ -25,8 +25,8 @@ export const DEFAULT_CONFIG = {
     USE_SERVER_TIME: true, // Overwrites the server time to use the current time of the computer it is running on.
     // Food Properties
     TIME_BETWEEN_FOOD_UPDATES: 10000,
-    WATER_REMOVAL_RATE: 0.08, // How much food to remove every update.
-    FOOD_REMOVAL_RATE: 0.05, // How much water to remove every update.
+    WATER_REMOVAL_RATE: 0.008, // How much food to remove every update.
+    FOOD_REMOVAL_RATE: 0.005, // How much water to remove every update.
     // World Properties
     VALID_HOSPITALS: [
         { x: -248.01309204101562, y: 6332.01513671875, z: 33.0750732421875 },
@@ -38,6 +38,11 @@ export const DEFAULT_CONFIG = {
     WEATHER_ROTATION: [
         'EXTRASUNNY',
         'EXTRASUNNY',
+        'CLEAR',
+        'EXTRASUNNY',
+        'EXTRASUNNY',
+        'EXTRASUNNY',
+        'CLEAR',
         'CLEAR',
         'CLOUDS',
         'OVERCAST',

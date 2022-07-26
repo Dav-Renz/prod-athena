@@ -125,12 +125,12 @@ export class VehicleSystem {
             }
 
             // Skip Unused Vehicles
-            if (vehicle.lastUsed) {
-                const lastUseDate = vehicle.lastUsed + DEFAULT_CONFIG.VEHICLE_SPAWN_TIMEOUT * 60000 * 60 * 24;
-                if (Date.now() > lastUseDate) {
-                    continue;
-                }
-            }
+            //if (vehicle.lastUsed) {
+            //    const lastUseDate = vehicle.lastUsed + DEFAULT_CONFIG.VEHICLE_SPAWN_TIMEOUT * 60000 * 60 * 24;
+            //    if (Date.now() > lastUseDate) {
+            //        continue;
+            //    }
+            //}
 
             if (!vehicle.model) {
                 alt.logWarning(
