@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CVehicleModelInfoVariation>
+  <variationData>
+    <Item>
+      <modelName>sandkingut</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array">
+			8
+            8
+            0
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			111
+            111
+            0
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			7
+            7
+            0
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			3
+            3
+            0
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			67
+            67
+            0
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			52
+            52
+            0
+			160
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			14
+            14
+            0
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			38
+            38
+            0
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			0
+            0
+            0
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            11
+            0
+            0
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			90
+            90
+            0
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			49
+            49
+            0
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            4
+            4
+            0
+			156
+          </indices>
+          <liveries/>
+        </Item>	
+        <Item>
+          <indices content="char_array">
+			94
+            94
+            0
+			156
+          </indices>
+          <liveries/>
+        </Item>			
+      </colors>
+      <kits />
+      <windowsWithExposedEdges />
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Standard White</Name>
+            <Value value="75" />
+          </Item>
+          <Item>
+            <Name>White Plate 2</Name>
+            <Value value="25" />
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="44" />
+      <sirenSettings value="0" />
+    </Item>
+    <Item>
+      <modelName>sandkingut2</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array">
+			111
+            111
+            0
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			7
+            7
+            7
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			14
+            14
+            15
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			3
+            3
+            5
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			8
+            8
+            0
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			52
+            52
+            52
+			160
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			94
+            94
+            94
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			0
+            0
+            8
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            67
+            67
+            67
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			90
+            90
+            90
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			4
+            4
+            8
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			67
+            67
+            67
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			49
+            49
+            50
+			156
+          </indices>
+          <liveries/>
+        </Item>	
+        <Item>
+          <indices content="char_array">
+            11
+            0
+            8
+			156
+          </indices>
+          <liveries/>
+        </Item>			
+      </colors>
+      <kits />
+      <windowsWithExposedEdges />
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Standard White</Name>
+            <Value value="75" />
+          </Item>
+          <Item>
+            <Name>White Plate 2</Name>
+            <Value value="25" />
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="44" />
+      <sirenSettings value="0" />
+    </Item>
+    <Item>
+      <modelName>sandkingut3</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array">
+			90
+            90
+            90
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			4
+            4
+            8
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			7
+            7
+            7
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			49
+            49
+            50
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			0
+            0
+            8
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			94
+            94
+            94
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			8
+            8
+            0
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            11
+            0
+            8
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			111
+            111
+            0
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			52
+            52
+            52
+			160
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			14
+            14
+            15
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			67
+            67
+            67
+			156
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices content="char_array">
+			3
+            3
+            5
+			156
+          </indices>
+          <liveries/>
+        </Item>	
+        <Item>
+          <indices content="char_array">
+			38
+            38
+            38
+			156
+          </indices>
+          <liveries/>
+        </Item>			
+      </colors>
+      <kits />
+      <windowsWithExposedEdges />
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Standard White</Name>
+            <Value value="75" />
+          </Item>
+          <Item>
+            <Name>White Plate 2</Name>
+            <Value value="25" />
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="44" />
+      <sirenSettings value="0" />
+    </Item>
+  </variationData>
+</CVehicleModelInfoVariation>
