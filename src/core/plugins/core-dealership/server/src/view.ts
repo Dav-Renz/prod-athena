@@ -34,7 +34,7 @@ class InternalFunctions {
             text: dealership.name,
             pos: dealership.pos,
             shortRange: true,
-            scale: 1,
+            scale: 0.6,
             sprite: 669,
         });
 

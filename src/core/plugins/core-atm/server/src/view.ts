@@ -206,7 +206,7 @@ export class AtmFunctions {
                 text: 'ATM',
                 color: 11,
                 sprite: 207,
-                scale: 1,
+                scale: 0.45,
                 shortRange: true,
                 pos: position,
                 uid: `atm-${i}`,

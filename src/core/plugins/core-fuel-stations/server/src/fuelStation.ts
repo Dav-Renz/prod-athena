@@ -32,7 +32,7 @@ export class FuelStationSystem {
                     text: 'Fuel',
                     color: 1,
                     sprite: 361,
-                    scale: 1,
+                    scale: 0.5,
                     shortRange: true,
                     pos: fuelPump,
                     uid: `fuel-${i}`,

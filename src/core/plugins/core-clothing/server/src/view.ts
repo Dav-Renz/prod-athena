@@ -86,7 +86,7 @@ export class ClothingFunctions {
                 text: 'Clothing Store',
                 color: 11,
                 sprite: 73,
-                scale: 1,
+                scale: 0.6,
                 shortRange: true,
                 pos: position,
                 uid,

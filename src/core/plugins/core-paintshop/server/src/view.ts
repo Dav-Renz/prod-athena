@@ -135,7 +135,7 @@ export class PaintShopView {
             text: PAINTSHOP_LOCALE.PAINTSHOP_LABEL,
             color: 48,
             sprite: 72,
-            scale: 1,
+            scale: 0.7,
             shortRange: true,
             pos: shop.vertices[0],
             uid: `paint-shop-${shop.uid}`,
@@ -169,7 +169,7 @@ export class PaintShopView {
             Athena.player.emit.notification(player, PAINTSHOP_LOCALE.MUST_BE_IN_A_VEHICLE);
             return;
         }
-        
+
         if (!player.vehicle.data || player.vehicle.isTemporary) {
             Athena.player.emit.notification(player, PAINTSHOP_LOCALE.CANNOT_BE_MODIFIED);
             return;
