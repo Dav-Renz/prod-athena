@@ -6453,4 +6453,13 @@ export const VehicleData: Array<VehicleInfo> = [
         price: 99999999999,
         storage: 24,
     },
+    {
+        display: 'Metro Rapid',
+        name: 'bus2',
+        type: VEHICLE_TYPE.VEHICLE,
+        class: VEHICLE_CLASS.SERVICE,
+        sell: true,
+        price: 999999999,
+        storage: 24,
+    },
 ];
