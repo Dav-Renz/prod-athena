@@ -6462,4 +6462,13 @@ export const VehicleData: Array<VehicleInfo> = [
         price: 999999999,
         storage: 24,
     },
+    {
+        display: 'Stairtruck',
+        name: 'stairtruck',
+        type: VEHICLE_TYPE.VEHICLE,
+        class: VEHICLE_CLASS.UTILITY,
+        sell: true,
+        price: 999999999,
+        storage: 24,
+    },
 ];
