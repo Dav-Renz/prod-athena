@@ -227,10 +227,25 @@ export class VehicleSystem {
      * `enter` is called when a player enters a vehicle.
      * @param {alt.Player} player - alt.Player - The player who entered the vehicle.
      * @param {alt.Vehicle} vehicle - The vehicle that the player is sitting in.
+     * @param {number} seat - The seatnumber the player is sitting in.
      * @returns The vehicle.
      */
-    static enter(player: alt.Player, vehicle: alt.Vehicle) {
+    static enter(player: alt.Player, vehicle: alt.Vehicle, seat: number) {
         player.hasSatDown = true;
+
+        type PassengerList = Array<{ player: alt.Player; seat: number }>;
+
+        let passengerList: PassengerList;
+
+        if (!vehicle.getMeta('passengerList')) {
+            passengerList = [{ player: player, seat: seat }];
+        } else {
+            passengerList = vehicle.getMeta<PassengerList>('passengerList');
+
+            passengerList.push({ player: player, seat: seat });
+        }
+
+        vehicle.setMeta('passengerList', passengerList);
 
         if (!vehicle.isBeingPushed) {
             return;
@@ -242,6 +257,19 @@ export class VehicleSystem {
     static leave(player: alt.Player, vehicle: alt.Vehicle, seat: number) {
         if (player && player.valid) {
             player.hasSatDown = false;
+        }
+
+        type PassengerList = Array<{ player: alt.Player; seat: number }>;
+
+        if (!vehicle.getMeta('passengerList')) {
+        } else {
+            const passengerList: PassengerList = vehicle.getMeta<PassengerList>('passengerList');
+
+            const index = passengerList.findIndex((PassengerList) => PassengerList.player === player);
+            if (index !== -1) {
+                passengerList.splice(index, 1);
+            }
+            vehicle.setMeta('passengerList', passengerList);
         }
 
         if (seat === 1) {
