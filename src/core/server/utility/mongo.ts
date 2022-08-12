@@ -2,7 +2,7 @@ import { Collections } from '../interface/iDatabaseCollections';
 import { IConfig } from '../interface/iConfig';
 
 // All of these are default values and should not be changed.
-const DEFAULT_DATABASE_NAME = 'athena';
+const DEFAULT_DATABASE_NAME = 'athena-docker-prod';
 const DEFAULT_MONGO_URL = `mongodb://USERNAME:PASSWORD@0.0.0.0:27017`;
 const DEFAULT_COLLECTIONS: string[] = [
     Collections.Accounts,
