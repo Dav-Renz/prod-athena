@@ -23,5 +23,8 @@
         "resources/core/**": false,
         "CONTRIBUTING.md": true,
         "fjklskljfds": true
+    },
+    "[javascript]": {
+        "editor.maxTokenizationLineLength": 25000
     }
 }
