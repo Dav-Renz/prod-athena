@@ -95,7 +95,7 @@ export class VehicleWheelMenu {
         }
 
         const dist = distance(alt.Player.local.pos, vehicle.pos);
-        if (dist >= 4) {
+        if (dist >= 7) {
             return;
         }
 
