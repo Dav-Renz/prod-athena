@@ -19,6 +19,7 @@ enum ObjectiveCriteria {
 enum ObjectiveType {
     WAYPOINT = 1,
     CAPTURE_POINT = 2,
+    INTERACION_POINT = 4,
 }
 
 enum ObjectiveEvents {
@@ -128,6 +129,13 @@ export interface Objective {
      * @memberof Objective
      */
     particle?: Particle;
+
+    /**
+     * An ID for the interaction typ.
+     * @type {string}
+     * @memberof Objective
+     */
+    id?: string;
 
     /**
      * Server-side callback when objective is started.

@@ -79,6 +79,12 @@ class ObjectiveController {
             }
         }
 
+        if (isFlagEnabled(objective.type, JobEnums.ObjectiveType.INTERACION_POINT)) {
+            if (dist <= objective.range) {
+                return true;
+            }
+        }
+
         return false;
     }
 

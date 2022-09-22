@@ -26,6 +26,7 @@ export class Job {
     private objectives: Array<Objective> = [];
     private vehicles: Array<alt.Vehicle> = [];
     private startTime: number;
+    private timers: Array<number> = [];
 
     /**
      * Creates an instance of a job handler.
@@ -52,6 +53,26 @@ export class Job {
         JobInstances[this.player.id] = this;
         this.startTime = Date.now();
         this.syncObjective();
+    }
+
+    /**
+     * Add an array of timers to this job.
+     * @param {Array<number>} timers
+     * @memberof Job
+     */
+    addTimers(timers: Array<number>) {
+        for (let i = 0; i < timers.length; i++) {
+            this.addTimer(timers[i]);
+        }
+    }
+
+    /**
+     * Adds a timer to this job.
+     * @param {number} timer
+     * @memberof Job
+     */
+    addTimer(timer: number) {
+        this.timers.push(timer);
     }
 
     /**
@@ -201,6 +222,9 @@ export class Job {
      * @memberof Job
      */
     quit(reason: string) {
+        for (let i = 0; i < this.timers.length; i++) {
+            alt.clearInterval(this.timers[i]);
+        }
         if (JobInstances[this.player.id]) {
             delete JobInstances[this.player.id];
         }
@@ -257,6 +281,23 @@ export class Job {
                 alt.emitClient(this.player, JobEnums.ObjectiveEvents.JOB_UPDATE, objective);
             }
         }
+
+        if (isFlagEnabled(objective.type, JobEnums.ObjectiveType.INTERACION_POINT)) {
+            if (distance(this.player.pos, objective.pos) > objective.range) {
+                return false;
+            }
+
+            const status = this.player.getSyncedMeta(objective.id);
+
+            if (status === true) {
+                return true;
+            } else {
+                alt.log('checkpoint5');
+                alt.emitClient(this.player, JobEnums.ObjectiveEvents.JOB_UPDATE, objective);
+            }
+        }
+
+        alt.log('checkpoint34');
 
         return false;
     }
@@ -490,6 +531,10 @@ function handleJobAction(player: alt.Player, triggerName: string) {
 export function getPlayerJob(player: alt.Player): Job | null {
     return JobInstances[player.id];
 }
+
+alt.onClient('debugcheckpoint', (player: alt.Player, zahl: number) => {
+    alt.log('checkpoint' + zahl);
+});
 
 alt.on('playerDisconnect', (player: alt.Player) => {
     const id = player.id;
