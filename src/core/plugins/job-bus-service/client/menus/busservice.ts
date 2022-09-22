@@ -12,9 +12,11 @@ function showNativeUI() {
 
     let buslinie1 = new NativeUI.UIMenuItem('Buslinie 1', 'Buslinie 1');
     let buslinie2 = new NativeUI.UIMenuItem('Buslinie 2', 'Buslinie 2');
+    let testlinie1 = new NativeUI.UIMenuItem('Buslinie 2', 'Buslinie 2');
 
     ui.AddItem(buslinie1);
     ui.AddItem(buslinie2);
+    ui.AddItem(testlinie1);
 
     let takeJobButton = new NativeUI.InstructionalButton('Job annehmen', NativeUI.Control.FrontendRdown);
     let exitJobMenu = new NativeUI.InstructionalButton('Jobmenü verlassen', NativeUI.Control.FrontendRright);
@@ -29,6 +31,9 @@ function showNativeUI() {
             ui.Close();
         } else if (item == buslinie2) {
             alt.emitServer(BUSSERVICE_INTERACTIONS.START_JOB, 2);
+            ui.Close();
+        } else if (item == testlinie1) {
+            alt.emitServer(BUSSERVICE_INTERACTIONS.START_TEST, -1);
             ui.Close();
         }
     });

@@ -6,4 +6,5 @@ export enum BUS_LINES {
 export enum BUSSERVICE_INTERACTIONS {
     START_JOB = 'busservice:Start:Job',
     SHOW_MENU = 'busservice:Open:Menu',
+    START_TEST = 'busservice:Start:Test',
 }
