@@ -1,13 +1,12 @@
 <template>
     <div class="stat-wrapper">
-        <Icon :shadow="true" class="amber--text text--accent-4 mr-1" icon="icon-wallet" :size="14" />
-        <span class="bank amber--text text--accent-4">{{ value.toLocaleString() }}</span>
+        <span class="bank overline mr-4">${{ value.toLocaleString() }}</span>
+        <Icon :shadow="true" icon="icon-bank" :size="14" />
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, defineAsyncComponent } from 'vue';
-import Icon from '@components/Icon.vue';
 
 const ComponentName = 'Bank';
 export default defineComponent({
@@ -33,11 +32,12 @@ export default defineComponent({
     align-items: center;
     align-content: center;
     position: relative;
+    opacity: 0.75 !important;
 }
 
 .bank {
-    font-family: 'Roboto';
-    font-size: 16px;
+    font-family: 'Inter';
+    font-size: 16px !important;
     font-weight: 600;
     text-shadow: 1px 1px black;
 }

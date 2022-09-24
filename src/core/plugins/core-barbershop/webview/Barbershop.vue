@@ -26,7 +26,7 @@
                         class="mb-2 brb-btn"
                         :color="getButtonColor(getColorName(index))"
                     >
-                        Color {{ index }}
+                        {{ locale.COLOR }} {{ index }}
                     </Button>
                     <ColorComponent
                         @select-color="selectColor"
@@ -69,6 +69,7 @@ import { maleHair } from '../shared/maleHair';
 import { femaleHair } from '../shared/femaleHair';
 import { BarbershopEvents } from '../shared/events';
 import { BarbershopData } from '../shared/interfaces';
+import { BARBER_SHOP_LOCALE } from '../shared/locales';
 import ColorComponentVue from './components/ColorComponent.vue';
 import HairstyleComponentVue from './components/HairstyleComponent.vue';
 import EyeComponentVue from './components/EyeComponent.vue';
@@ -100,7 +101,7 @@ export default defineComponent({
             // Update Check
             ready: false,
             // Navigation
-            navIndex: 2,
+            navIndex: 0,
             navigation: [
                 { icon: 'icon-hair', type: 'hair', colors: 2, isHair: true, colorComponentType: 0 },
                 { icon: 'icon-eye', type: 'eye', colors: 1, isEyebrows: true, colorComponentType: 0 },
@@ -124,6 +125,7 @@ export default defineComponent({
             makeupOpacity: 1,
             // Utility
             resolvePath: ResolvePath,
+            locale: BARBER_SHOP_LOCALE,
         };
     },
     computed: {
@@ -190,8 +192,6 @@ export default defineComponent({
 
             for (const key of Object.keys(data)) {
                 this[key] = data[key];
-
-                console.log(`${key}: ${data[key]}`);
             }
 
             this.update();
@@ -203,6 +203,10 @@ export default defineComponent({
                 if (navIndex !== -1) {
                     navigationOptions.splice(navIndex, 1);
                     this.navigation = navigationOptions;
+                }
+
+                if (navIndex >= this.navigation.length) {
+                    this.navIndex = 0;
                 }
             }
 

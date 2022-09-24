@@ -7,9 +7,11 @@ import { sha256Random } from '../utility/encryption';
 const DEFAULT_INTERACTION_HEIGHT = 3;
 
 export class InteractionShape extends alt.ColshapeCylinder {
-    interaction: Interaction = {};
+    interaction: Interaction = {
+        position: { x: 0, y: 0, z: 0 },
+    };
 
-    constructor(interaction: Interaction) {
+    constructor(interaction: Required<Interaction>) {
         super(
             interaction.position.x,
             interaction.position.y,

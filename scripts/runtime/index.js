@@ -12,7 +12,7 @@ const npx = process.platform === 'win32' ? 'npx.cmd' : 'npx';
 const npm = process.platform === 'win32' ? 'npm.cmd' : 'npm';
 const serverBinary = process.platform === 'win32' ? 'altv-server.exe' : './altv-server';
 
-const passedArguments = process.argv.slice(2);
+const passedArguments = process.argv.slice(2).map(arg => arg.replace('--', ''));
 const fileNameHashes = {};
 
 if (NO_SPECIAL_CHARACTERS.test(process.cwd())) {
@@ -83,9 +83,9 @@ async function runFile(processName, ...args) {
 async function handleConfiguration() {
     let configName = 'prod';
 
-    if (passedArguments.includes('--dev')) {
+    if (passedArguments.includes('dev')) {
         configName = 'dev';
-    } else if (passedArguments.includes('--devtest')) {
+    } else if (passedArguments.includes('devtest')) {
         configName = 'devtest';
     }
 
@@ -93,7 +93,7 @@ async function handleConfiguration() {
     const start = Date.now();
     let promises = [];
 
-    if (!passedArguments.includes('--dev')) {
+    if (!passedArguments.includes('dev')) {
         promises.push(runFile(npx, 'vite', 'build', './src-webviews'));
     }
 
@@ -154,7 +154,7 @@ async function handleServerProcess(shouldAutoRestart = false) {
         await runFile('chmod', '+x', `./altv-server`);
     }
 
-    if (passedArguments.includes('--cdn')) {
+    if (passedArguments.includes('cdn')) {
         lastServerProcess = spawn(serverBinary, ['--justpack'], { stdio: 'inherit' });
         lastServerProcess.once('exit', () => {
             const finalDestination = `${process.cwd()}/cdn_upload`.replace(/\\/g, '/');
@@ -223,6 +223,7 @@ async function coreBuildProcess() {
     await runFile(node, './scripts/compiler/core');
     await runFile(node, './scripts/plugins/core');
     await runFile(node, './scripts/plugins/webview');
+    await runFile(node, './scripts/plugins/files');
     console.log(`===> Finished Core Build (${Date.now() - start}ms)`);
 }
 
@@ -249,7 +250,7 @@ async function devMode(firstRun = false) {
 }
 
 async function runServer() {
-    const isDev = passedArguments.includes('--dev');
+    const isDev = passedArguments.includes('dev');
 
     //Update dependencies for all the things
     console.log('===> Updating dependencies for plugins');
@@ -263,7 +264,7 @@ async function runServer() {
     await coreBuildProcess();
     await handleConfiguration();
 
-    if (passedArguments.includes('--dev')) {
+    if (passedArguments.includes('dev')) {
         await sleep(50);
         await devMode(true);
         handleStreamerProcess(false);
@@ -276,7 +277,7 @@ async function runServer() {
     handleServerProcess(true);
 }
 
-if (passedArguments.includes('--start')) {
+if (passedArguments.includes('start')) {
     for (const port of ports) {
         try {
             fkill(port, { force: true, ignoreCase: true, silent: true });
@@ -286,21 +287,23 @@ if (passedArguments.includes('--start')) {
     }
 
     runServer();
-    process.stdin.on('data', (data) => {
-        const result = data.toString().trim();
-        if (result.charAt(0) !== '+' && result.charAt(0) !== '/') {
-            console.log(`Use +help to see server maintenance commands. (This Console)`);
-            console.log(`Use /commands to see server magagement commands. (The Game Console)`);
-            if (!lastServerProcess.killed) {
-                return;
-            }
 
-            lastServerProcess.send(data);
-            return;
-        }
+    // process.stdin.on('data', (data) => {
+    //     const result = data.toString().trim();
+    //     if (result.charAt(0) !== '+' && result.charAt(0) !== '/') {
+    //         console.log(`Use +help to see server maintenance commands. (This Console)`);
+    //         console.log(`Use /commands to see server magagement commands. (The Game Console)`);
+    //         if (!lastServerProcess.killed) {
+    //             return;
+    //         }
 
-        const inputs = result.split(' ');
-        const cmdName = inputs.shift();
-        console.log(cmdName, ...inputs);
-    });
+    //         lastServerProcess.send(data);
+    //         return;
+    //     }
+
+    //     const inputs = result.split(' ');
+    //     const cmdName = inputs.shift();
+    //     console.log(cmdName, ...inputs);
+    // });
+
 }

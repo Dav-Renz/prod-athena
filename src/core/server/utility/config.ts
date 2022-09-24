@@ -12,7 +12,7 @@ let firstRun = true;
 let isVueDebug = false;
 
 export default {
-    get: (): IConfig | null => {
+    get: (): IConfig | undefined => {
         // Return the cached config to prevent reading twice.
         if (configCache) {
             return configCache;
@@ -66,6 +66,10 @@ export default {
      * @return {boolean}
      */
     isDevMode(): boolean {
+        if (!configCache || !configCache.USE_DEV_MODE) {
+            return false;
+        }
+
         return configCache.USE_DEV_MODE;
     },
     getViteServer(): string {
@@ -81,7 +85,7 @@ export default {
         try {
             data = JSON.parse(file);
         } catch (err) {
-            console.warn(`Failed to read package.json. Run your package.json through a JSON linter. Google it.`);
+            alt.logError(`Failed to read package.json. Run your package.json through a JSON linter. Google it.`);
             process.exit(1);
         }
 
