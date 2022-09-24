@@ -44,12 +44,23 @@ export class BusJob {
         });
 
         InteractionController.add({
-            callback: BusJob.showMenu,
+            callback: BusJob.outOfOrder,
             description: 'Choose Busline',
             position: START_POINT,
             range: 2,
             isPlayerOnly: true,
         });
+    }
+
+    static async outOfOrder(player: alt.Player) {
+        if (!player || !player.valid || player.data.isDead) {
+            return;
+        }
+
+        Athena.player.emit.notification(
+            player,
+            'Currently the bus service is interrupted. Please Come back at a later time.',
+        );
     }
 
     /**
