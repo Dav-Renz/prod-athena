@@ -13,6 +13,36 @@ export const metroRapid: Array<VehicleInfo> = [
     },
 ];
 
+export const xcelsior: Array<VehicleInfo> = [
+    {
+        display: 'XD 40',
+        name: 'bus3',
+        type: VEHICLE_TYPE.VEHICLE,
+        class: VEHICLE_CLASS.SERVICE,
+        sell: true,
+        price: 999999999,
+        storage: 24,
+    },
+    {
+        display: 'XD 60',
+        name: 'xd60',
+        type: VEHICLE_TYPE.VEHICLE,
+        class: VEHICLE_CLASS.SERVICE,
+        sell: true,
+        price: 999999999,
+        storage: 24,
+    },
+    {
+        display: 'XD Trailer',
+        name: 'xdtrailer',
+        type: VEHICLE_TYPE.VEHICLE,
+        class: VEHICLE_CLASS.TRAILER,
+        sell: true,
+        price: 999999999,
+        storage: 24,
+    },
+];
+
 export const airportVehicles: Array<VehicleInfo> = [
     {
         display: 'Stairtruck',

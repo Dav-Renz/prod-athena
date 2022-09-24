@@ -1,6 +1,6 @@
 import * as alt from 'alt-server';
 import { VehicleData } from '../../../shared/information/vehicles';
-import { metroRapid, airportVehicles, sandkingUtility } from '../shared/information/vehicles';
+import { metroRapid, airportVehicles, sandkingUtility, xcelsior } from '../shared/information/vehicles';
 import { PluginSystem } from '../../../server/systems/plugins';
 
 const PLUGIN_NAME = 'mod-vehicles';
@@ -18,5 +18,9 @@ for (const _vehData of airportVehicles) {
 }
 
 for (const _vehData of sandkingUtility) {
+    VehicleData.push(_vehData);
+}
+
+for (const _vehData of xcelsior) {
     VehicleData.push(_vehData);
 }
