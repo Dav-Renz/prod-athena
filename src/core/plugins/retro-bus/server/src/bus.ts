@@ -228,7 +228,7 @@ function getNearestBus2(player: alt.Player): alt.Vehicle | null {
 function addBike(player: alt.Player, vehicle: alt.Vehicle) {
     //setUpBus(player, vehicle);
 
-    let closeVehs = getCloseVehiclesOfClass(player.pos, 5, VEHICLE_CLASS.CYCLE);
+    let closeVehs = getCloseVehiclesOfClass(player.pos, 9, VEHICLE_CLASS.CYCLE);
 
     const menu: Array<IWheelOption> = [];
 
