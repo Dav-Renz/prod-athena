@@ -46,7 +46,7 @@ export class Job {
      * This instance should be called each time to create new job instances.
      * @memberof Job
      */
-    constructor() { }
+    constructor() {}
 
     /**
      * Add the player to the job this job and start it.
@@ -144,7 +144,7 @@ export class Job {
         for (let i = 0; i < this.vehicles.length; i++) {
             try {
                 this.vehicles[i].destroy();
-            } catch (err) { }
+            } catch (err) {}
         }
     }
 
@@ -517,7 +517,7 @@ export class Job {
 
         Athena.player.emit.objectAttach(this.player, objectToAttach, objective.attachable.duration);
     }
-    
+
     /**
      * Remove the current job attachable.
      * @return {*}
@@ -528,7 +528,7 @@ export class Job {
         if (!objective.attachable) {
             return;
         }
-        
+
         Athena.player.emit.objectRemove(this.player, objective.attachable.uid);
     }
 

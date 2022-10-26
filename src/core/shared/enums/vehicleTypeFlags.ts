@@ -35,3 +35,7 @@ export const enum VEHICLE_TYPE {
 export function isVehicleType(type: string, vehicleType: VEHICLE_TYPE): boolean {
     return type === vehicleType;
 }
+
+export function isVehicleClass(class_: string, vehicleClass: VEHICLE_CLASS): boolean {
+    return class_ === vehicleClass;
+}
