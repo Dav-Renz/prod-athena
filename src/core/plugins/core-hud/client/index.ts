@@ -258,7 +258,7 @@ class InternalFunctions implements ViewModel {
         let unit: string;
 
         if (isVehicleType(data.type, VEHICLE_TYPE.AIRCRAFT) || isVehicleType(data.type, VEHICLE_TYPE.BOAT)) {
-            unit = 'kn';
+            unit = 'KN';
         } else {
             if (native.getProfileSetting(227) === 1) {
                 unit = 'KM/H';
